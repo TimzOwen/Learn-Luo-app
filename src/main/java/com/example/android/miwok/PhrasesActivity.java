@@ -13,26 +13,28 @@ public class PhrasesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.words_list);
 
-        ArrayList<String> arrayList = new ArrayList<>();
+        ArrayList<Word> words= new ArrayList<Word>();
 
-        arrayList.add("How are You");
-        arrayList.add("where do you live");
-        arrayList.add("my name is ");
-        arrayList.add("I am going");
-        arrayList.add("he is running");
-        arrayList.add("i am doing great");
-        arrayList.add("have you eaten?");
-        arrayList.add("where do you school at?");
-        arrayList.add("Goodnight");
-        arrayList.add("ask me why");
-        arrayList.add("when i am going to job");
+        words.add(new Word("Achiel","one"));
+        words.add(new Word("Ariyo","Two"));
+        words.add(new Word("Adek","Three"));
+        words.add(new Word("Ang'wen","Four"));
+        words.add(new Word("Abich","five"));
+        words.add(new Word("Auchiel","six"));
+        words.add(new Word("Abiriyo","Seven"));
+        words.add(new Word("Aboro","Eight"));
+        words.add(new Word("Ochiko","Nine"));
+        words.add(new Word("Apar","Ten"));
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
+        WordAdapter adapter = new WordAdapter(this, words,R.color.category_phrases);
 
-        ListView listView = (ListView) findViewById(R.id.list_phrases);
+        ListView listView = (ListView) findViewById(R.id.list_numbers_view);
 
-        listView.setAdapter(arrayAdapter);
+
+        listView.setAdapter(adapter);
+
+
     }
 }
